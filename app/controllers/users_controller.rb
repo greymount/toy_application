@@ -61,6 +61,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -72,7 +76,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email)
     end
 
-    def index
-      @users = User.all
-    end
 end
